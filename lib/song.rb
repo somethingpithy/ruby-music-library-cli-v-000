@@ -55,6 +55,6 @@ class Song
 
     new(song_name, artist, genre)
   end
-  
+
 
 end
