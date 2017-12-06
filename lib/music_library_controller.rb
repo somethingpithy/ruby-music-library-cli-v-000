@@ -42,32 +42,31 @@ class MusicLibraryController
   end
 
   def list_artists
-    
+
   end
 
   def list_genres
   end
 
   def list_songs_by_artist
-    puts "Please enter the name of the artist:"
-    input = gets.strip
-
     if artist = Artist.find_by_name(input)
-      artist.songs.sort { |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
+      artist.songs.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
         puts "#{i}. #{s.name} - #{s.genre.name}"
       end
     end
   end
 
   def list_songs_by_genre
-    puts "Please enter the genre:"
+    puts "Please enter the name of a genre:"
     input = gets.strip
 
     if genre = Genre.find_by_name(input)
-      genre.songs.sort { |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
+      genre.songs.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
         puts "#{i}. #{s.artist.name} - #{s.name}"
+      end
+    end
   end
-
+  
   def play_song
   end
 
