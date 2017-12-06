@@ -1,5 +1,4 @@
 class MusicLibraryController
-
   def initialize(path = "./db/mp3s")
     MusicImporter.new(path).import
   end
@@ -37,6 +36,7 @@ class MusicLibraryController
     end
   end
 
+
   def list_song
     Song.all.sort { |a,b| a.name <=> b.name }.
   end
@@ -66,7 +66,7 @@ class MusicLibraryController
       end
     end
   end
-  
+
   def play_song
   end
 
